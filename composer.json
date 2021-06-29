@@ -1,0 +1,35 @@
+{
+  "name": "drabbit/avito-plugin",
+  "type": "october-plugin",
+  "description": "avito generate XML OctoberCMS plugin",
+  "keywords": [
+    "october",
+    "cms",
+    "xml",
+    "avito",
+    "api",
+    "plugin"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "drabbit",
+      "email": "acer5742zg@mail.ru",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "intervention/image": "^2.5",
+    "ext-gd": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drubbit\\Avito\\": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}

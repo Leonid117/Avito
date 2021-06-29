@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Offer
+
+# Model Form Field configuration
+form: $/drabbit/avito/models/offer/fields.yaml
+
+# Model Class name
+modelClass: Drabbit\Avito\Models\Offer
+
+# Default redirect location
+defaultRedirect: drabbit/avito/offers
+
+# Create page
+create:
+    title: Create Offer
+    redirect: drabbit/avito/offers/update/:id
+    redirectClose: drabbit/avito/offers
+
+# Update page
+update:
+    title: Edit Offer
+    redirect: drabbit/avito/offers
+    redirectClose: drabbit/avito/offers
+
+# Preview page
+preview:
+    title: Preview Offer

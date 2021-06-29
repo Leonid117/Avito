@@ -1,0 +1,389 @@
+fields:
+    avito_id:
+        label: Артикул
+        type: text
+        context: create
+
+    title:
+        label: Название объявления
+    description:
+        label: Текстовое описание объявления в соответствии с правилами Авито
+        type: richeditor
+        toolbarButtons: bold||align||formatOL|formatUL||html||fullscreen
+        size: huge
+
+    listing_fee:
+        label: Вариант платного размещения
+        span: left
+        type: dropdown
+        showSearch: false
+        emptyOption: -- Выберите Вариант платного размещения --
+        options:
+            Package: Пакет размещений
+            Single: Разовое размещение
+            PackageSingle: Автоматическое
+    ad_status:
+        label: Платная услуга, которую нужно применить к объявлению
+        span: right
+        type: dropdown
+        emptyOption: -- Выберите услугу --
+        options:
+            Free: обычное объявление
+            Premium: премиум-объявление или пакет «До 5 раз больше просмотров на 7 дней»
+            VIP: VIP-объявление или пакет «До 2 раз больше просмотров на 7 дней»
+            PushUp: поднятие объявления в поиске или пакет «До 2 раз больше просмотров на 1 день»
+            Highlight: выделение объявления
+            TurboSale: применение пакета «Турбо-продажа» или пакета «До 10 раз больше просмотров на 7 дней»
+            QuickSale: применение пакета «Быстрая продажа» или пакета «До 5 раз больше просмотров на 7 дней»
+            x2_1: применение пакета «До 2 раз больше просмотров на 1 день»
+            x2_7: применение пакета «До 2 раз больше просмотров на 7 дней»
+            x5_1: применение пакета «До 5 раз больше просмотров на 1 день»
+            x5_7: применение пакета «До 5 раз больше просмотров на 7 дней»;
+            x10_1: применение пакета «До 10 раз больше просмотров на 1 день»;
+            x10_7: применение пакета «До 10 раз больше просмотров на 7 дней»
+
+    begin_at:
+        label: Дата и время начала размещения объявления
+        type: datepicker
+        span: left
+    end_at:
+        label: Дата и время, до которых объявление актуально
+        type: datepicker
+        span: right
+
+    price:
+        label: Цена (в рублях)
+        span: left
+        type: number
+
+tabs:
+    stretch: true
+    defaultTab: Контактная инф.
+    cssClass: text-blue
+    icons:
+        Контактная инф.: icon-user
+        Местоположение: icon-user
+    fields:
+        # Контактная информация
+        manager_name:
+            tab: Контактная инф.
+            label: Имя менеджера, контактного лица компании по данному объявлению
+            span: left
+        allow_email:
+            tab: Контактная инф.
+            label: Возможность написать сообщение по объявлению через сайт
+            span: right
+            type: dropdown
+            showSearch: false
+            emptyOption: -- Возможность написать сообщение --
+            options:
+                - Да
+                - Нет
+        contact_phone:
+            tab: Контактная инф.
+            label: Контактный телефон
+            placeholder: «+7 (495) 777-10-66», «8 905 207 04 90», «88123855085», «9052070490».
+            span: left
+
+        address:
+            tab: Местоположение
+            label: Полный адрес объекта
+            span: left
+            trigger:
+                action: hide
+                field: is_mode
+                condition: checked
+
+        # Описание товара
+        category:
+            tab: Описание товара
+            label: Категория товара
+            span: left
+            type: dropdown
+            showSearch: false
+            emptyOption: -- Выберите категорию --
+        ad_type:
+            tab: Описание товара
+            label: Вид объявления
+            span: right
+            type: dropdown
+            showSearch: false
+            emptyOption: -- Выберите описание товара --
+            options:
+                - Товар приобретен на продажу
+                - Товар от производителя
+
+
+        goods_type[category][clothes]:
+            tab: Описание товара
+            label: Вид товара
+            type: dropdown
+            span: left
+            dependsOn: category
+            showSearch: false
+            emptyOption: -- Выберите вид товара --
+            options: listGoodsTypeClothes
+        goods_type[category][baby_clothes]:
+            tab: Описание товара
+            label: Вид товара
+            type: dropdown
+            span: left
+            dependsOn: category
+            showSearch: false
+            emptyOption: -- Выберите вид товара --
+            options: listGoodsTypeBabyClothes
+        goods_type[category][goods_for_kids]:
+            tab: Описание товара
+            label: Вид товара
+            type: dropdown
+            span: left
+            dependsOn: category
+            showSearch: false
+            emptyOption: -- Выберите вид товара --
+            options: listGoodsTypeGoodsForKids
+        goods_type[category][jewelry]:
+            tab: Описание товара
+            label: Вид товара
+            type: dropdown
+            span: left
+            dependsOn: category
+            showSearch: false
+            emptyOption: -- Выберите вид товара --
+            options: listGoodsTypeJewelry
+        goods_type[category][health_and_beauty]:
+            tab: Описание товара
+            label: Вид товара
+            type: dropdown
+            span: left
+            dependsOn: category
+            showSearch: false
+            emptyOption: -- Выберите вид товара --
+            options: listGoodsTypeHealthAndBeauty
+
+
+        condition[category][children]:
+            tab: Описание товара
+            label: Состояние
+            type: dropdown
+            span: right
+            dependsOn:
+                - category
+            showSearch: false
+            emptyOption: -- Выберите состояние --
+            options: listConditionForChildren
+        condition[category][rest]:
+            tab: Описание товара
+            label: Состояние
+            type: dropdown
+            span: right
+            dependsOn:
+                - category
+            showSearch: false
+            emptyOption: -- Выберите состояние --
+            options: listConditionForRest
+
+
+
+        apparel[category][goods_type][womens_clothing]:
+            tab: Описание товара
+            label: Предмет одежды
+            type: dropdown
+            span: left
+            dependsOn:
+                - goods_type[category][clothes]
+                - goods_type[category][baby_clothes]
+                - goods_type[category][goods_for_kids]
+                - goods_type[category][jewelry]
+                - goods_type[category][health_and_beauty]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите предмет одежды --
+            options: listApparelWomensClothing
+        apparel[category][goods_type][mens_clothing]:
+            tab: Описание товара
+            label: Предмет одежды
+            type: dropdown
+            span: left
+            dependsOn:
+                - goods_type[category][clothes]
+                - goods_type[category][baby_clothes]
+                - goods_type[category][goods_for_kids]
+                - goods_type[category][jewelry]
+                - goods_type[category][health_and_beauty]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите предмет одежды --
+            options: listApparelMensClothing
+        apparel[category][goods_type][for_girls]:
+            tab: Описание товара
+            label: Предмет одежды
+            type: dropdown
+            span: left
+            dependsOn:
+                - goods_type[category][clothes]
+                - goods_type[category][baby_clothes]
+                - goods_type[category][goods_for_kids]
+                - goods_type[category][jewelry]
+                - goods_type[category][health_and_beauty]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите предмет одежды --
+            options: listApparelForGirls
+        apparel[category][goods_type][for_boys]:
+            tab: Описание товара
+            label: Предмет одежды
+            type: dropdown
+            span: left
+            dependsOn:
+                - goods_type[category][clothes]
+                - goods_type[category][baby_clothes]
+                - goods_type[category][goods_for_kids]
+                - goods_type[category][jewelry]
+                - goods_type[category][health_and_beauty]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите предмет одежды --
+            options: listApparelForBoys
+
+
+
+        size[category][goods_type][apparel][womens_clothing]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - goods_type[category][clothes]
+                - apparel[category][goods_type][womens_clothing]
+                - apparel[category][goods_type][mens_clothing]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeWomensClothing
+        size[category][goods_type][apparel][mens_clothing]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - goods_type[category][clothes]
+                - apparel[category][goods_type][womens_clothing]
+                - apparel[category][goods_type][mens_clothing]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeMensClothing
+        size[category][goods_type][apparel][womens_clothing_jeans]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - apparel[category][goods_type][womens_clothing]
+                - goods_type[category][clothes]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeWomensClothingJeans
+        size[category][goods_type][apparel][mens_clothing_jeans]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - apparel[category][goods_type][mens_clothing]
+                - goods_type[category][clothes]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeMensClothingJeans
+        size[category][goods_type][apparel][womens_clothing_footwear]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - apparel[category][goods_type][womens_clothing]
+                - goods_type[category][clothes]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeWomensClothingFootwear
+        size[category][goods_type][apparel][mens_clothing_footwear]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - apparel[category][goods_type][mens_clothing]
+                - goods_type[category][clothes]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeMensClothingFootwear
+        size[category][goods_type][apparel][for_girls]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - goods_type[category][baby_clothes]
+                - apparel[category][goods_type][for_girls]
+                - apparel[category][goods_type][for_boys]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeForGirlsAndBoys
+        size[category][goods_type][apparel][for_boys]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - goods_type[category][baby_clothes]
+                - apparel[category][goods_type][for_girls]
+                - apparel[category][goods_type][for_boys]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeForGirlsAndBoys
+        size[category][goods_type][apparel][for_girls_footwear]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - apparel[category][goods_type][for_girls]
+                - goods_type[category][baby_clothes]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeForGirlsAndBoysFootwear
+        size[category][goods_type][apparel][for_boys_footwear]:
+            tab: Описание товара
+            label: Размер одежды или обуви
+            type: dropdown
+            span: right
+            dependsOn:
+                - apparel[category][goods_type][for_boys]
+                - goods_type[category][baby_clothes]
+                - category
+            showSearch: false
+            emptyOption: -- Выберите размер одежды или обуви --
+            options: listSizeForGirlsAndBoysFootwear
+
+        images:
+            tab: Фото и видео
+            label: Фотографии
+            span: left
+            type: fileupload
+            mode: image
+            mimeTypes: jpeg, png
+            maxFilesize: 2
+
+        video_url:
+            tab: Фото и видео
+            label: Видео c YouTube
+            span: left
+            placeholder: https://www.youtube.com/watch?v=***
+            comment: Пример неправильной ссылки - http://www.youtube.com/embed/***

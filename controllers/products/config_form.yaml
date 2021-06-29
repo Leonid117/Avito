@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Product
+
+# Model Form Field configuration
+form: $/drabbit/avito/models/product/fields.yaml
+
+# Model Class name
+modelClass: Drabbit\Avito\Models\Product
+
+# Default redirect location
+defaultRedirect: drabbit/avito/products
+
+# Create page
+create:
+    title: Create Product
+    redirect: drabbit/avito/products/update/:id
+    redirectClose: drabbit/avito/products
+
+# Update page
+update:
+    title: Edit Product
+    redirect: drabbit/avito/products
+    redirectClose: drabbit/avito/products
+
+# Preview page
+preview:
+    title: Preview Product

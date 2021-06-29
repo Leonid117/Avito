@@ -1,0 +1,121 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        required: true
+        label: Название шаблона
+    description:
+        required: true
+        label: Текстовое описание объявления в соответствии с правилами Авито
+        type: richeditor
+        toolbarButtons: bold||align||formatOL|formatUL||html||fullscreen
+        size: huge
+
+    category:
+        required: true
+        label: Категория товара
+        span: left
+        type: dropdown
+        showSearch: false
+        options:
+            clothes: Одежда, обувь, аксессуары
+    apparel:
+        required: true
+        label: Вид объявления
+        span: right
+        type: dropdown
+        showSearch: false
+        options:
+            footwear: Обувь
+    city:
+        required: true
+        label: Город
+        mode: string
+        span: left
+        default: Санкт-Петербург
+
+    address:
+        required: true
+        label: адрес
+        mode: string
+        customTags: true
+        useKey: false
+        span: right
+        type: taglist
+
+    ad_type:
+        required: true
+        label: Вид объявления
+        span: right
+        type: dropdown
+        showSearch: false
+        emptyOption: -- Выберите описание товара --
+        options:
+            - Товар приобретен на продажу
+            - Товар от производителя
+
+    time_limit:
+        required: true
+        label: Ограничения по времени
+        type: datepicker
+        mode: time
+        span: left
+
+    begin_at:
+        required: true
+        label: Дата и время начала размещения объявления
+        type: datepicker
+        span: left
+
+    end_at_cycle:
+        label: Дата и время конца размещения объявления по циклу
+        type: datepicker
+        span: right
+        trigger:
+            action: hide
+            field: on_interval
+            condition: checked
+    interval_minutes:
+        label: Интервал(в минутах)
+        type: number
+        span: right
+        trigger:
+            action: show
+            field: on_interval
+            condition: checked
+
+    on_interval:
+        span: left
+        label: Интервал
+        type: switch
+
+    interval_days:
+        label: Интервал(в днях)
+        type: number
+        span: right
+        trigger:
+            action: show
+            field: on_interval
+            condition: checked
+
+    on_random:
+        label: Дата в разброс
+        type: switch
+        trigger:
+            action: hide
+            field: on_interval
+            condition: checked
+
+    logo:
+        label: Лого
+        mode: image
+        useCaption: true
+        fileTypes: png,jpg
+        thumbOptions:
+            mode: image
+            extension: auto
+        span: left
+        type: fileupload

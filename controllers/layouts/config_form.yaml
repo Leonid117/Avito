@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Layout
+
+# Model Form Field configuration
+form: $/drabbit/avito/models/layout/fields.yaml
+
+# Model Class name
+modelClass: Drabbit\Avito\Models\Layout
+
+# Default redirect location
+defaultRedirect: drabbit/avito/layouts
+
+# Create page
+create:
+    title: Create Layout
+    redirect: drabbit/avito/layouts/update/:id
+    redirectClose: drabbit/avito/layouts
+
+# Update page
+update:
+    title: Edit Layout
+    redirect: drabbit/avito/layouts
+    redirectClose: drabbit/avito/layouts
+
+# Preview page
+preview:
+    title: Preview Layout

@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: №
+        searchable: true
+    title:
+        label: Название объявления
+        searchable: true
+    avito_id:
+        label: Артикул
+        searchable: true
+    goods_type[category][clothes]:
+        label: Вид товара
+
+    begin_at:
+        label: Дата и время начала размещения объявления
+    end_at:
+        label: Дата и время, до которых объявление актуально

@@ -1,0 +1,55 @@
+fields:
+    layout_id:
+        required: true
+        label: Шаблон
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        type: dropdown
+        emptyOption: Выберите шаблон
+    title:
+        required: true
+        label: Теги
+        mode: string
+        separator: comma
+        customTags: true
+        useKey: false
+        span: left
+        type: taglist
+    type:
+        required: true
+        label: Тип
+        span: left
+        type: dropdown
+        emptyOption: -- Выберите тип обуви --
+    avito_id:
+        required: true
+        label: Артикул
+        span: left
+        type: text
+        context: create
+    price:
+        required: true
+        label: 'Цена от'
+        span: left
+        type: number
+    comment:
+        label: Пол
+        options:
+            male: Мужской
+            female: Женский
+            unisex: Унисекс
+        showSearch: true
+        span: left
+        type: dropdown
+    images:
+        required: true
+        label: Фотографии
+        mode: image
+        fileTypes: png,jpg
+        useCaption: true
+        thumbOptions:
+            mode: image
+            extension: auto
+        span: left
+        type: fileupload

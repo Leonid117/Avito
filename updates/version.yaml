@@ -1,0 +1,16 @@
+1.0.1:
+    - 'Run table migrations'
+    - create_products_table.php
+1.0.2:
+    - 'Run table migrations'
+    - create_offers_table.php
+    - create_layouts_table.php
+1.0.6:
+    - 'Created table drabbit_avito_offers'
+    - builder_table_create_drabbit_avito_offers.php
+1.0.4:
+    - 'Drop table drabbit_avito_offer_products'
+    - builder_table_delete_drabbit_avito_offer_products.php
+1.0.5:
+    - 'Update table migrations create_layouts_table'
+    - create_layouts_table.php

@@ -1,0 +1,15 @@
+layouts:
+#  label: Продукт
+#  manage:
+#    form: $/drabbit/avito/models/offerproduct/fields.yaml
+#    list: $/drabbit/avito/models/offerproduct/colums.yaml
+#  view:
+#    list: $/drabbit/avito/models/offerproduct/colums.yaml
+#    toolbarButtons: create|delete
+  label: Продукт
+  view:
+    list: $/drabbit/avito/models/layout/columns.yaml
+    toolbarButtons: create|delete
+  manage:
+    form: $/drabbit/avito/models/layout/fields.yaml
+    recordsPerPage: 10

@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: №
+        searchable: true
+
+    title:
+        label: Теги
+        searchable: true
+
+    avito_id:
+        label: Артикул
+        searchable: true
+
+    price:
+        label: 'Цена от'
+
+    comment:
+        label: Пол
+
+    layout_id:
+        label: Шаблон
